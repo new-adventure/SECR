@@ -6,16 +6,16 @@ const app = express();
 app.get('/api/scan', (req, res) => {
     /* 
         Desired interface:
-        - /api/scan?ip=<ip> 
+        - /api/scan?url=<url> 
         Response:
         - CLI output of nmap vuln scan and parsing accordingly 
     */
-    const output = executeScan(req.query.url);
-    res.send(output);
+
+    res.send(executeScan(req.query.url));
 });
 
-const executeScan = (ip) => {
-    exec(`./nmap_vuln/nmap_vuln_scan ${ip}`, (err, stdout) => {
+const executeScan = (url) => {
+    exec(`./nmap_vuln/nmap_vuln_scan ${url}`, (err, stdout) => {
         if (err) {
             console.error(err);
         }
