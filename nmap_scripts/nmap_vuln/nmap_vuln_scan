@@ -1,3 +1,0 @@
-#!/bin/bash
-
-nmap -oX "output/$1_vuln.xml"  -sV --script=vulscan/vulscan.nse $1 > output/vulscan_output.txt

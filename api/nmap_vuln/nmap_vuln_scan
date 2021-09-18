@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nmap -sV --script=vulscan/vulscan.nse $1
