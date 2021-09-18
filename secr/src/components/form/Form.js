@@ -1,4 +1,9 @@
+import react, {useState} from "react"
+
 function Form() {
+
+    const [isLoading,updateIsLoading] = useState(false)
+
     const handleSubmission = (event) => {
         event.preventDefault();
         let form = event.target;
@@ -26,6 +31,7 @@ function Form() {
 
         // Request
         let fetchUrl = `http://34.67.176.228/scan?url=${url}&types=${type.join(',')}`;
+        updateIsLoading(true);
         console.log(fetchUrl);
 
 
@@ -35,7 +41,7 @@ function Form() {
         <form onSubmit={(event) => {handleSubmission(event)}}>
             <div className="main-input">
                 <input className="url" name="url" type="text" placeholder="Enter URL..." />
-                <input className="submit" type="submit" value="Check!"/>
+                <button className={isLoading ? "submit loading" : "submit"} type="submit">Check!</button>
             </div>
             <div className="checkbox-buttons">
                 <div className="checkbox-wrapper">
