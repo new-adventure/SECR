@@ -1,7 +1,7 @@
 #!/bin/bash
 
-nmap -sV --script=vulscan/vulscan.nse $1 > vuln_output.txt
-cp vuln_output.txt output
+nmap -T5 -sV --script=vulscan/vulscan.nse $1 > vuln_output.txt
+cp vuln_output.txt output/vuln_output.txt
 mv vuln_output.txt tmpV
 egrep \[[0-9]+\] tmpV > tmpV1
 rm tmpV

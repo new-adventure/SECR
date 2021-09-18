@@ -1,0 +1,9 @@
+#!/bin/bash
+
+nmap  $1 > tmp
+cp tmp output/$1_nmap_ports.txt
+grep /tcp tmp > tmp2
+sed -i "s/\/tcp.*//" tmp2
+mv tmp2 output/portlist.txt
+rm tmp
+cat output/portlist.txt
