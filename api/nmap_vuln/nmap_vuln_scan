@@ -1,3 +1,9 @@
 #!/bin/bash
 
-nmap -sV --script=vulscan/vulscan.nse $1
+nmap -sV --script=vulscan/vulscan.nse $1 > vuln_output.txt
+cp vuln_output.txt output
+mv vuln_output.txt tmpV
+egrep \[[0-9]+\] tmpV > tmpV1
+rm tmpV
+mv tmpV1 output/$1_vulnerabilities.txt 
+cat output/$1_vulnerabilities.txt
