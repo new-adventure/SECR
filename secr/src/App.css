@@ -1,5 +1,5 @@
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 
 	background: #252525;
 	color: #fff;
@@ -12,13 +12,108 @@ header {
 
 h1 {
 	font-size: 72px;
+	margin: 0;
 }
 
 h1 span {
-	background: -webkit-linear-gradient(
-		-70deg, #C63D1F 0%, #CCB76D 100%);
+	background: -webkit-linear-gradient(-70deg, #c63d1f 0%, #ccb76d 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-box-decoration-break: clone;
+}
+
+form {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+form .main-input {
+	display: flex;
+	background: #343434;
+	border-radius: 7px;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+	margin-bottom: 30px;
+}
+
+form .url {
+	width: calc(100% - 140px);
+	background-color: rgba(0, 0, 0, 0);
+	color: #fff;
+	border: 0px;
+	box-shadow: none;
+	outline: none !important;
+	padding: 13px 20px;
+	font-size: 18px;
+}
+
+form .submit {
+	background: #2ea54f;
+	padding: 13px 40px;
+	color: #fff;
+	box-shadow: none;
+	border: 0px;
+	outline: none !important;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 7px;
+}
+
+form .checkbox-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 45px;
+}
+
+.checkbox-wrapper {
+	position: relative;
+}
+
+input[type="checkbox"] {
+	/*display:  none;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 20px;
+	width: 20px;
+	-webkit-appearance: none;
+}
+
+.checkbox-label {
+	font-size: 16px;
+	color: #acacac;
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.checkbox-label:before {
+	/* pointer-events: none; */
+	/* display: flex; */
+	content: " ";
+	height: 18px;
+	width: 18px;
+	border-radius: 3px;
+	margin-right: 14px;
+	background: #343434;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+.checkbox-label:after {
+	content: " ";
+	position: absolute;
+	background: #2EA54F;
+	height: 18px;
+	width: 18px;
+	border-radius: 3px;
+	background-image: url('./images/check.svg');
+	background-repeat: no-repeat;
+	background-size: 14px auto;
+	background-position: center;
+	opacity: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label:after {
+	opacity: 1;
 }
