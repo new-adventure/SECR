@@ -23,6 +23,19 @@ h1 span {
 	-webkit-box-decoration-break: clone;
 }
 
+.navbar {
+	max-width: 1024px;
+	margin: 20px auto 0;
+	text-align: left;
+	padding: 0 15px;
+}
+
+.navbar .logo {
+	font-size: 40px;
+	font-weight: bold;
+	margin: 0;
+}
+
 form {
 	max-width: 650px;
 	margin: 0 auto;
@@ -116,4 +129,21 @@ input[type="checkbox"] {
 
 .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label:after {
 	opacity: 1;
+}
+
+.credits {
+	margin-top: 150px;
+}
+
+.credits p {
+	color: #acacac;
+}
+
+.credits a,
+.credits a:hover,
+.credits a:focus,
+.credits a:active,
+.credits a:visited {
+	color: #acacac;
+	text-decoration: underline;
 }

@@ -1,39 +1,58 @@
-import { useState } from 'react';
-
 function Form() {
-    const [url, setUrl] = useState('localhost:8080');
-    const [sqlInjection, setSqlInjection] = useState(false);
-    const [ddos, setDdos] = useState(false);
-    const [scanning, setScanning] = useState(false);
-    const handleSqlInjection = () => setSqlInjection(!sqlInjection);
-    const handleDdos = () => setDdos(!ddos);
-    const handleScanning = () => setScanning(!scanning);
+    const handleSubmission = (event) => {
+        event.preventDefault();
+        let form = event.target;
+        const data = Object.fromEntries(new FormData(form).entries());
+        console.log(data);
+
+        // Formatting
+        let url = data.url
+        let type = []
+        if (data.type0) {type.push(data.type0)}
+        if (data.type1) {type.push(data.type1)}
+        if (data.type2) {type.push(data.type2)}
+
+        // Validation
+        if (url.length == 0) {
+            // Needs update
+            window.alert("Fix!");
+            return;
+        }
+        if (type.length == 0) {
+            // Needs update
+            window.alert("Fix!");
+            return;
+        }
+
+        // Request
+        let fetchUrl = `http://34.67.176.228/scan?url=${url}&types=${type.join(',')}`;
+        console.log(fetchUrl);
+
+
+    }
+
     return (
-        <form>
-            <div class="main-input">
-                <input class="url" type="text" placeholder="Enter URL..." />
-                <input class="submit" type="submit" value="Check!" onClick={handleSubmission} />
+        <form onSubmit={(event) => {handleSubmission(event)}}>
+            <div className="main-input">
+                <input className="url" name="url" type="text" placeholder="Enter URL..." />
+                <input className="submit" type="submit" value="Check!"/>
             </div>
-            <div class="checkbox-buttons">
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" name="type" id="c-1" value="SQL Injection" onClick={handleSqlInjection} checked={sqlInjection} />
-                    <label class="checkbox-label" for="c-1">SQL Injection</label>
+            <div className="checkbox-buttons">
+                <div className="checkbox-wrapper">
+                    <input type="checkbox" name="type0" id="c-1" value="SQL Injection"/>
+                    <label className="checkbox-label" for="c-1">SQL Injection</label>
                 </div>
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" name="type" id="c-2" value="DDOS" onClick={handleDdos} checked={ddos} />
-                    <label class="checkbox-label" for="c-2">DDOS</label>
+                <div className="checkbox-wrapper">
+                    <input type="checkbox" name="type1" id="c-2" value="DDOS"/>
+                    <label className="checkbox-label" for="c-2">DDOS</label>
                 </div>
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" name="type" id="c-3" value="Port Scanning" onClick={handleScanning} checked={scanning} />
-                    <label class="checkbox-label" for="c-3">Port Scanning</label>
+                <div className="checkbox-wrapper">
+                    <input type="checkbox" name="type2" id="c-3" value="Port Scanning"/>
+                    <label className="checkbox-label" for="c-3">Port Scanning</label>
                 </div>
             </div>
         </form>
     );
-}
-
-function handleSubmission() {
-    alert("submitted")
 }
 
 export default Form;
