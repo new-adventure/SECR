@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "script": "./api/api.js",
+            "env": {
+                "NODE_ENV": "production",
+                "PORT": "8080"
+            }
+        }
+    ]
+}
