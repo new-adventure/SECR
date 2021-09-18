@@ -11,7 +11,7 @@ app.get('/api/scan', (req, res) => {
         Response:
         - CLI output of nmap vuln scan and parsing accordingly 
     */
-    res.send(executeScan(req.query.url));
+    res.send(string(executeScan(req.query.url)));
 });
 
 const executeScan = (url) => {
