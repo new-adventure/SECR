@@ -117,3 +117,20 @@ input[type="checkbox"] {
 .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label:after {
 	opacity: 1;
 }
+
+.credits {
+	margin-top: 150px;
+}
+
+.credits p {
+	color: #acacac;
+}
+
+.credits a,
+.credits a:hover,
+.credits a:focus,
+.credits a:active,
+.credits a:visited {
+	color: #acacac;
+	text-decoration: underline;
+}
