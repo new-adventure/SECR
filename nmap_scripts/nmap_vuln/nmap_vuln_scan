@@ -1,0 +1,2 @@
+#!/bin/bash
+nmap -oX "$1_vuln.csv"  -sV --script=vulscan/vulscan.nse $1 > vulscan_output.txt
