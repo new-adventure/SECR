@@ -20,9 +20,7 @@ const executeScan = (url) => {
         if (error) {
             console.error(err);
         }
-        while (true) {
-            console.log(stdout)
-        }
+        console.log(stdout)
         return stdout;
     });
 }
