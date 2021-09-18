@@ -1,4 +1,5 @@
 const { exec } = require('child_process');
+const { application } = require('express');
 const express = require('express');
 const app = express();
 
@@ -10,7 +11,7 @@ app.get('/api/scan', (req, res) => {
         - CLI output of nmap vuln scan and parsing accordingly 
     */
     const output = executeScan(req.query.url);
-    res.send(output)
+    res.send(output);
 });
 
 const executeScan = (ip) => {
@@ -21,3 +22,5 @@ const executeScan = (ip) => {
         return stdout;
     });
 }
+
+app.listen(8080);
