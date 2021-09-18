@@ -30,7 +30,7 @@ function Form() {
         }
 
         // Request
-        let fetchUrl = `http://34.67.176.228/scan?url=${url}&types=${type.join(',')}`;
+        let fetchUrl = `http://34.67.176.228/api/scan?url=${url}&types=${type.join(',')}`;
         updateIsLoading(true);
         console.log(fetchUrl);
 
@@ -45,15 +45,15 @@ function Form() {
             </div>
             <div className="checkbox-buttons">
                 <div className="checkbox-wrapper">
-                    <input type="checkbox" name="type0" id="c-1" value="SQL Injection"/>
+                    <input type="checkbox" name="type0" checked id="c-1" value="SQL Injection"/>
                     <label className="checkbox-label" for="c-1">SQL Injection</label>
                 </div>
                 <div className="checkbox-wrapper">
-                    <input type="checkbox" name="type1" id="c-2" value="DDOS"/>
-                    <label className="checkbox-label" for="c-2">DDOS</label>
+                    <input type="checkbox" name="type1" checked id="c-2" value="Common Vulnerability"/>
+                    <label className="checkbox-label" for="c-2">Common Vulnerability</label>
                 </div>
                 <div className="checkbox-wrapper">
-                    <input type="checkbox" name="type2" id="c-3" value="Port Scanning"/>
+                    <input type="checkbox" name="type2" checked id="c-3" value="Port Scanning"/>
                     <label className="checkbox-label" for="c-3">Port Scanning</label>
                 </div>
             </div>
