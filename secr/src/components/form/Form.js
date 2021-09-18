@@ -8,7 +8,6 @@ function Form() {
     const handleSqlInjection = () => setSqlInjection(!sqlInjection);
     const handleDdos = () => setDdos(!ddos);
     const handleScanning = () => setScanning(!scanning);
-    console.log(sqlInjection, ddos, scanning);
     return (
         <form>
             <div class="main-input">
