@@ -1,1 +1,3 @@
 node_modules/
+nmap_vuln/output/
+nmap_vuln/vulscan/
