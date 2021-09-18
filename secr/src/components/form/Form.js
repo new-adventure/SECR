@@ -33,7 +33,7 @@ function Form() {
     );
 }
 
-function handleSubmission(input) {
+function handleSubmission() {
     alert("submitted")
 }
 
