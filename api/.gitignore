@@ -4,3 +4,4 @@ nmap_vuln/vulscan_output.txt
 output/
 nmap_vuln/output
 ports_scan/output
+tmp2
