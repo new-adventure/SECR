@@ -1,8 +1,12 @@
+import { useState } from 'react';
+
 function Form() {
-	return (
-		<form>
+    let [url, setUrl] = useState('localhost:8080');
+    console.log(url);
+    return (
+        <form>
             <div class="main-input">
-                <input class="url" type="text" placeholder="Enter URL..." />
+                <input class="url" type="text" placeholder="Enter URL..." onChange={i => setUrl(i.target.value)} />
                 <input class="submit" type="submit" value="Check!" />
             </div>
             <div class="checkbox-buttons">
@@ -20,7 +24,7 @@ function Form() {
                 </div>
             </div>
         </form>
-	);
+    );
 }
 
 export default Form;
