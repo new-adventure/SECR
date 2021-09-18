@@ -13,7 +13,7 @@ function Form() {
         <form>
             <div class="main-input">
                 <input class="url" type="text" placeholder="Enter URL..." />
-                <input class="submit" type="submit" value="Check!" onClick={ } />
+                <input class="submit" type="submit" value="Check!" onClick={handleSubmission} />
             </div>
             <div class="checkbox-buttons">
                 <div class="checkbox-wrapper">
@@ -34,6 +34,7 @@ function Form() {
 }
 
 function handleSubmission(input) {
+    alert("submitted")
 }
 
 export default Form;
