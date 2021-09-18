@@ -2,9 +2,12 @@ import { useState } from 'react';
 
 function Form() {
     const [url, setUrl] = useState('localhost:8080');
-    const [sqlInjection, setSqlInjection] = useState(true);
+    const [sqlInjection, setSqlInjection] = useState(false);
     const [ddos, setDdos] = useState(false);
     const [scanning, setScanning] = useState(false);
+    const handleSqlInjection = () => setSqlInjection(!sqlInjection);
+    const handleDdos = () => setDdos(!ddos);
+    const handleScanning = () => setScanning(!scanning);
     console.log(sqlInjection, ddos, scanning);
     return (
         <form>
@@ -14,15 +17,15 @@ function Form() {
             </div>
             <div class="checkbox-buttons">
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="type" id="c-1" value="SQL Injection" checked={sqlInjection} />
+                    <input type="checkbox" name="type" id="c-1" value="SQL Injection" onClick={handleSqlInjection} checked={sqlInjection} />
                     <label class="checkbox-label" for="c-1">SQL Injection</label>
                 </div>
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="type" id="c-2" value="DDOS" checked={ddos} />
+                    <input type="checkbox" name="type" id="c-2" value="DDOS" onClick={handleDdos} checked={ddos} />
                     <label class="checkbox-label" for="c-2">DDOS</label>
                 </div>
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="type" id="c-3" value="Port Scanning" checked={scanning} />
+                    <input type="checkbox" name="type" id="c-3" value="Port Scanning" onClick={handleScanning} checked={scanning} />
                     <label class="checkbox-label" for="c-3">Port Scanning</label>
                 </div>
             </div>
