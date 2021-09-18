@@ -15,7 +15,7 @@ app.get('/api/scan', (req, res) => {
 });
 
 const executeScan = (url) => {
-    exec(`sh nmap_vuln/nmap_vuln_scan ${url}`, (error, stdout, stderr) => {
+    exec(`sh nmap_vuln/nmap_ports ${url}`, (error, stdout, stderr) => {
         if (error) {
             console.error(err);
         }
