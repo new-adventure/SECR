@@ -1,4 +1,4 @@
-const { execSync } = require('child_process');
+const { exec } = require('child_process');
 const { application } = require('express');
 const express = require('express');
 const { fileURLToPath } = require('url');
@@ -15,7 +15,7 @@ app.get('/api/scan', (req, res) => {
 });
 
 const executeScan = (url) => {
-    execSync(`sh nmap_vuln/nmap_vuln_scan ${url}`, (error, stdout, stderr) => {
+    exec(`sh nmap_vuln/nmap_vuln_scan ${url}`, (error, stdout, stderr) => {
         if (error) {
             console.error(err);
         }
