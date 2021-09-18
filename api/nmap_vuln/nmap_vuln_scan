@@ -1,3 +1,5 @@
 #!/bin/bash
 
-nmap -sV --script=vulscan/vulscan.nse $1 > nmap_vuln/vulscan_output.txt
+nmap -sV --script=vulscan/vulscan.nse $1 > vulscan_output.txt
+mkdir output
+mv vulscan_output.txt output/

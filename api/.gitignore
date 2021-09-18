@@ -1,3 +1,4 @@
 node_modules/
 nmap_vuln/vulscan/
 nmap_vuln/vulscan_output.txt
+nmap_vuln/output/
