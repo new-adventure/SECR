@@ -1,4 +1,5 @@
 import react, { useState } from "react"
+import { Modal, Button } from "react-bootstrap";
 
 function Form() {
     const [isLoading, updateIsLoading] = useState(false)
@@ -57,6 +58,25 @@ function Form() {
             </div>
         </form>
     );
+}
+
+function ReportModal() {
+    return (
+        <Modal.Dialog>
+            <Modal.Header closeButton>
+                <Modal.Title>Security Report</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <p>test</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary">Close</Button>
+                <Button variant="primary">Save changes</Button>
+            </Modal.Footer>
+        </Modal.Dialog>
+    )
 }
 
 export default Form;
