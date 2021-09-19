@@ -24,7 +24,7 @@ const executeScan = (url) => {
         console.log(stdout)
         return stdout;
     });   */
-    return execShellCommand(`sh nmap_vuln/nmap_ports ${url}`)
+    return execShellCommand(`sh /home/tarekali15/SECR/api/nmap_vuln/nmap_port_and_vuln ${url}`)
 }
 
 function execShellCommand(cmd) {
