@@ -62,13 +62,16 @@ function Form() {
 
 function ReportModal() {
     return (
-        <Modal.Dialog>
+        <Modal.Dialog className="bg-dark text-light">
             <Modal.Header closeButton>
-                <Modal.Title>Security Report</Modal.Title>
+                <Modal.Title>Security Report: 1/10</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>test</p>
+                <p>Not using TLS</p>
+                <p>Found 5 routes vulnerable to XSS</p>
+                <p>Found 3 routes vulnerable to CSRF</p>
+                <p>Found 2 URLs with improper URL access</p>
             </Modal.Body>
 
             <Modal.Footer>

@@ -169,10 +169,3 @@ input[type="checkbox"] {
   color: #acacac;
   text-decoration: underline;
 }
-
-.modal {
-  position: fixed;
-  width: 50%;
-  vertical-align: center;
-  align-items: center;
-}
