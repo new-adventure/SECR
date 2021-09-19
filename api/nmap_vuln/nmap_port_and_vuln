@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#The final output with ports and vulnerabilities will be in file output/nmap_output.txt
 rm -rf output
 nmap  $1 > tmp
 mkdir output
@@ -8,12 +8,13 @@ grep /tcp tmp > tmp2
 sed -i "s/\/tcp.*//" tmp2
 mv tmp2 output/portlist.txt
 rm tmp
-cat output/portlist.txt
-echo -e "\n"
+cat output/portlist.txt > nmap_output.txt
+echo -e "\n" >> nmap_output.txt
 nmap -T5 -sV --script=vulscan/vulscan.nse $1 > vuln_output.txt
 cp vuln_output.txt output/vuln_output.txt
 mv vuln_output.txt tmpV
 egrep \[[0-9]+\] tmpV > tmpV1
 rm tmpV
 mv tmpV1 output/$1_vulnerabilities.txt 
-cat output/$1_vulnerabilities.txt
+cat output/$1_vulnerabilities.txt >> nmap_output.txt
+mv nmap_output.txt output
