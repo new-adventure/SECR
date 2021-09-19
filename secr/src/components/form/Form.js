@@ -61,24 +61,28 @@ function Form() {
 }
 
 function ReportModal() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
-        <Modal.Dialog className="bg-dark text-light">
-            <Modal.Header closeButton>
-                <Modal.Title>Security Report: 1/10</Modal.Title>
-            </Modal.Header>
+        <>
+            <Modal.Dialog className="bg-dark text-light">
+                <Modal.Header closeButton>
+                    <Modal.Title>Security Report: 1/10</Modal.Title>
+                </Modal.Header>
 
-            <Modal.Body>
-                <p>Not using TLS</p>
-                <p>Found 5 routes vulnerable to XSS</p>
-                <p>Found 3 routes vulnerable to CSRF</p>
-                <p>Found 2 URLs with improper URL access</p>
-            </Modal.Body>
+                <Modal.Body>
+                    <p>Not using TLS</p>
+                    <p>Found 5 routes vulnerable to XSS</p>
+                    <p>Found 3 routes vulnerable to CSRF</p>
+                    <p>Found 2 URLs with improper URL access</p>
+                </Modal.Body>
 
-            <Modal.Footer>
-                <Button variant="secondary">Close</Button>
-                <Button variant="primary">Save changes</Button>
-            </Modal.Footer>
-        </Modal.Dialog>
+                <Modal.Footer>
+                    <Button variant="primary">Close</Button>
+                </Modal.Footer>
+            </Modal.Dialog>
+        </>
     )
 }
 
