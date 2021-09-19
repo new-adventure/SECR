@@ -1,8 +1,6 @@
 import react, { useState } from "react"
-import Modal from "./modal";
 
 function Form() {
-
     const [isLoading, updateIsLoading] = useState(false)
 
     const handleSubmission = (event) => {
@@ -34,6 +32,7 @@ function Form() {
         let fetchUrl = `http://34.67.176.228/api/scan?url=${url}&types=${type.join(',')}`;
         updateIsLoading(true);
         console.log(fetchUrl);
+        return <Modal />
     }
 
     return (
