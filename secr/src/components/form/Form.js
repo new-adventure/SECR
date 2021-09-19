@@ -1,4 +1,5 @@
 import react, { useState } from "react"
+import Modal from "./modal";
 
 function Form() {
 
